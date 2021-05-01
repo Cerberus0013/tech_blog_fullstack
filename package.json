@@ -1,0 +1,20 @@
+{
+  "name": "ch14techblog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cerberus0013/tech_blog_fullstack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cerberus0013/tech_blog_fullstack/issues"
+  },
+  "homepage": "https://github.com/Cerberus0013/tech_blog_fullstack#readme"
+}
