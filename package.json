@@ -16,5 +16,16 @@
   "bugs": {
     "url": "https://github.com/Cerberus0013/tech_blog_fullstack/issues"
   },
-  "homepage": "https://github.com/Cerberus0013/tech_blog_fullstack#readme"
+  "homepage": "https://github.com/Cerberus0013/tech_blog_fullstack#readme",
+  "dependencies": {
+    "2": "^3.0.0",
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.1",
+    "dotenv": "^8.2.0",
+    "express-handlebars": "^5.3.0",
+    "express-session": "^1.17.1",
+    "express-sessions": "^1.0.6",
+    "mysql": "^2.18.1",
+    "sequelize": "^6.6.2"
+  }
 }
