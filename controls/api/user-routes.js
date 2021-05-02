@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Post, Comments } = require("../../models");
 
 //GET all API USERS
 router.get("/", (req, res) => {
@@ -19,6 +19,20 @@ router.get("/:id", (req, res) => {
     where: {
       id: res.params.id,
     },
+    include: [{
+      model:Post,
+      attributes: ['id', 'title', 'post_url', 'created_at']
+    },
+    {
+      model:Comment,
+      attributes: [ 'id', 'comment_text', 'created_at'],
+      include: {
+        model: Post,
+        attributes: ['title']
+      }
+    }
+  
+  ]
   })
     .then((dbUser) => {
       if (!dbUser) {
@@ -36,7 +50,7 @@ router.post("/", (req, res) => {
   User.create({
     username: req.body.username,
     email: req.body.email,
-    passwprd: req.body.password,
+    password: req.body.password,
   })
     .then((dbUser) => res.json(dbUser))
     .catch((err) => {
