@@ -44,10 +44,32 @@ router.post("/", (req, res) => {
     });
 });
 
+router.post('/login', (req, res) => {
+  User.findOne ({
+    where: {
+      email: req.body.email
+    }
+  }).then(dbUser => {
+    if (!dbUser) {
+      res.status(400).json({ message: 'Your email address does not match a current user' });
+      return;
+    }
+
+    const validPassword = dbUserData.checkPassword(req.body.password);
+    if (!validPassword) {
+      res.status(400).json({ message: 'Incorrect password!' });
+      return;
+    }
+
+    res.json({ user: dbUser, message: 'You are now logged in!' });
+  });
+});
+
 //Update/ PUT a specific user
 
 router.put("/:id", (req, res) => {
-  User.update(req.body, {
+  User.update(req.body,{
+    individualHooks: true,
     where: {
       id: id.params.id,
     },
