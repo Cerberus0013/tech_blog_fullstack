@@ -1,14 +1,25 @@
+const path = require("path");
 const express = require("express");
-const routes = require("./controls");
+const routes = require("./controllers");
 const sequelize = require("./config/connection");
+
+//template engine set up- handlebars
+const exphbs = require("express-handlebars");
+const hbs = exphbs.create({});
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(routes);
 
+//handlebars, engine emplate
+
+app.engine("handlebars", exphbs({ defaultLayout: 'main' }));
+app.set("view engine", "handlebars");
 // turn on routes
 
 // turn on connection to db and server
