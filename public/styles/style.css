@@ -9,10 +9,11 @@
 
 * {
    box-sizing: border-box;
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
 
-.mainpage{
+body{
     background-color: var(--background--color);
 
 }
