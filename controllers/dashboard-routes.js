@@ -33,8 +33,8 @@ router.get("/", (req, res) => {
 });
 
 
-// router.get("/", (req, res) => {
-//   res.render("dashboard")
-// });
+ router.get("/", (req, res) => {
+  res.render("dashboard")
+ });
 
 module.exports= router

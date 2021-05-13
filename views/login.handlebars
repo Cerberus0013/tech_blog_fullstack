@@ -1,16 +1,22 @@
-<form class="login-form">
-  <div>
-    <label for="email-login">email:</label>
-    <input type="text" id="email-login" />
-  </div>
-  <div>
-    <label for="password-login">password:</label>
-    <input type="password" id="password-login" />
-  </div>
-  <div>
-    <button type="submit">login</button>
-  </div>
-</form>
 
+
+<link rel="stylesheet" href="/stylesheets/login.css">
+
+
+<section class="login-form">
+
+<form action="javascript:void(0);">
+  <h1>Log In</h1>
+  <div class="form-input-material">
+    <label for="username">User Email</label>
+    <input type="text" name="useremail" id="useremail" placeholder="Account Email" autocomplete="off" class="form-control-material" required />
+  </div>
+  <div class="form-input-material">
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password-login" placeholder="Password" autocomplete="off" class="form-control-material" required />
+  </div>
+  <button type="submit" class="btn btn-primary btn-ghost">Login</button>
+</form>
+</section>
 
 <script src="/javascript/login.js"></script>

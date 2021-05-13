@@ -1,0 +1,32 @@
+
+
+
+
+
+
+{{#if posts.length}}
+<section>
+  <h2>Your Posts</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">add comment</button>
+  </div>
+</form>
+
+<script src="/javascript/comment.js"></script>
+<script src="/javascript/add-post.js"></script>

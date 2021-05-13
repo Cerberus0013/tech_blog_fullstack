@@ -38,7 +38,9 @@ router.get('/', (req, res) => {
       });
 });
 
-
+router.get('/dashboard' (rea, res) => {
+  res.render('dashboard');
+})
 
 router.get("/login", (req, res) => {
   res.render("login");
