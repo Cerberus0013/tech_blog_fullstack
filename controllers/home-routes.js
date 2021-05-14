@@ -8,9 +8,7 @@ router.get("/", (req, res) => {
     attributes: [
       "id",
       "title",
-      "description",
-      "price",
-      "image_url",
+      "content",
       "created_at",
     ],
     include: [
@@ -24,7 +22,7 @@ router.get("/", (req, res) => {
       },
       {
         model: User,
-        attributes: ["username", "location", "email"],
+        attributes: ["username"],
       },
     ],
   })
@@ -84,7 +82,10 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
-  res.render("sign-up");
+  res.render("signup");
+});
+router.get("/", (req, res) => {
+  res.render("homepage");
 });
 
 router.get("/dashboard", (req, res) => {

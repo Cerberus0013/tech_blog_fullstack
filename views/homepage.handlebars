@@ -1,7 +1,33 @@
-<ol class="post-list">
-  {{#each posts as |post|}}
-  <li>
-    {{> post-info post }}
-  </li>
-  {{/each}}
-</ol>
+{{#each posts}}
+<html lang="en">
+
+<head>
+  <title>Harvest vase</title>
+  <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="product-img">
+      <img src={{this.image_url}} height="420" width="325">
+    </div>
+    <div class="product-info">
+      <div class="product-text">
+        <h1>{{this.title}}</h1>
+        <h2>Being Sold by {{user.username}} located in {{user.location}}</h2>
+        <p>{{this.description }}</p>
+      </div>
+      <div class="product-price-btn">
+        <p><span>{{this.price}}</span>$</p>
+         <button type="button" class ="email-owner"><a href="mailto:{{user.email}}">Contact Seller</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+{{/each}}
+
+
+
