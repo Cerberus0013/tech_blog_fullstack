@@ -8,18 +8,21 @@
   <link rel="stylesheet" href="styles/style.css">
 </head>
 
-<body>
-  <div class="mainpage">
-    <header>
-      <h1> Lets Talk About Tech</h1>
-    <nav class="navbar">
-    <ul>
-       <li><a href= "/"> Home</a></li> 
-        <li> <a href= "/login">Log in </a></li>
-       <li> <a href= "/dashboard">Dashboard </a></li> 
-         <li> <a href= "/signup">Create an Account </a></li>
-    </ul> 
-</nav>
+<<div class="header">
+  <a href="/" class="logo">Talk About Tech</a>
+  <div class="header-right">
+    <a class="active" href="/">Home</a>
+    {{#if loggedIn}}
+    <a href="/dashboard">Dashboard</a>
+    <a id="logout" href="/">logout</a>
+    {{else}}
+    <a href="/login">My Account</a>
+     <a href="/signup">Sign Up</a>
+    <a href="#about">About Us</a>
+  {{/if}}
+
+
+  </div>
     </header>
     <main>
         {{{body}}}
@@ -27,5 +30,8 @@
     <footer>
       <!--footer partial, that wil be on all pages-->
     </footer>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
   </div>
 </body>
