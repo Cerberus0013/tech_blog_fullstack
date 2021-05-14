@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lets Talk About Tech</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<<div class="header">
+  <a href="/" class="logo">Talk About Tech</a>
+  <div class="header-right">
+    <a class="active" href="/">Home</a>
+    {{#if loggedIn}}
+    <a href="/dashboard">Dashboard</a>
+    <a id="logout" href="/">logout</a>
+    {{else}}
+    <a href="/login">My Account</a>
+     <a href="/signup">Sign Up</a>
+    <a href="#about">About Us</a>
+  {{/if}}
+
+
+  </div>
+    </header>
+    <main>
+        {{{body}}}
+    </main>
+    <footer>
+      <!--footer partial, that wil be on all pages-->
+    </footer>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+  </div>
+</body>
