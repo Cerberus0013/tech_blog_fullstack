@@ -1,8 +1,10 @@
 
 
-<h1>Hello {{user.username}}</h1>
+<h1>Hello {{username}}{{user.username}}</h1>
 
 <link rel="stylesheet" href="/stylesheets/post.css">
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="/stylesheets/login.css">
 
 <form class="form-style-9 new-post-form">
 <ul>
@@ -15,15 +17,13 @@
     
 </li>
 <li>
-<textarea class="field-style" placeholder="Item Description" name= "description-post"></textarea>
-   <img src="https://images.unsplash.com/photo-1505751171710-1f6d0ace5a85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" height="300" width="350" id="imgPreview" name="imgPreview"/>
-    <label for="img">Select image:
-    <input type="file" id="imgUpload" name="img" accept="image/*">
+<textarea  class="field-style" placeholder="What do you want to say?" name= "post content"></textarea>
+  
     </label>
   </div>
 </li>
 <li>
-<input type="submit" value="Add Item" />
+<button id="add-post">Add Post</button>>
 </li>
 </ul>
 </form>
